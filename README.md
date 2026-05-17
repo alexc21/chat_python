@@ -1,2 +1,3 @@
 # chat_python
-chat_python Real-time chat application — Python sockets,  CLI &amp; PyQt GUI, SQLite. 
+Real-time chat application — Python sockets, 
+CLI & PyQt GUI, SQLite. 
