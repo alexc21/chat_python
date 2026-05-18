@@ -1,12 +1,11 @@
 import socket
-from dotenv import load_dotenv
 import os
 
 
-class Network():
+class Server():
     def __init__(self, host=None, port=None) -> None:
         self.socket_ = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        load_dotenv()
+        
         self.host  = host or os.getenv("IP_ADRESSE", "")
         self.port_ = port or int(os.getenv("PORT", "1025"))
 
@@ -19,7 +18,7 @@ class Network():
 
 
     def close(self):
-        pass
+        self.socket_.close()
 
 
 """
