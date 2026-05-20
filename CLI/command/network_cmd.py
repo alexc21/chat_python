@@ -36,8 +36,15 @@ def server_start(
             "port": port
         }, file)
     while True:
-        client, adresse = server.accept_connection()
+        client, adresse = server.accept_connection() 
         print(f"Client connecté : {adresse}")
+        while True:
+            message = client.recv(1024).decode()
+            if (message == "exit"):
+                print(f"client {adresse} deconnecté")
+                break
+            print(f"message reçu: {message}")
+            server.send_message(client, "message bien reçu")
 
 
 

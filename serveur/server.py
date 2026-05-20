@@ -16,6 +16,8 @@ class Server():
     def accept_connection(self):
         return self.socket_.accept()
 
+    def send_message(self,client, message):
+        client.send("message reçu".encode())
 
     def close(self):
         self.socket_.close()
